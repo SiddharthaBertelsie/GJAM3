@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
 
     [Tooltip("The rigid body of our player character, used for movement and collisions")]
-    [SerializeField] private Rigidbody rigidBody;
+    [SerializeField] private Rigidbody2D rigidBody;
 
     [Header("Script")]
 
@@ -26,10 +26,7 @@ public class PlayerController : MonoBehaviour
     // We call the method in fixe duodate, due to using a Rigidbidy to detetc for collisions
     void FixedUpdate()
     {
-        //if (!gameManager.gameOver)
-        //{
-        //    Movement();
-        //}
+        Movement();
     }
 
     /// <summary>
@@ -38,17 +35,17 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         // This code here is responsible for turning the player in the direction of the gamepad stick
-        if (inputManager.playerMovementValue != Vector3.zero) // When the stick is in the dead zone, we'll still keep the same rotation before hand.
+        if (inputManager.playerMovementValue != Vector2.zero) // When the stick is in the dead zone, we'll still keep the same rotation before hand.
         {
-            rigidBody.velocity = inputManager.playerMovementValue * Time.fixedDeltaTime * playerSpeed;
+            rigidBody.linearVelocity = inputManager.playerMovementValue * Time.fixedDeltaTime * playerSpeed;
 
-            Quaternion toRotation = Quaternion.LookRotation(inputManager.playerMovementValue, Vector3.up); // Create a new rotation value, that's set to the current direction of the stick
+            //Quaternion toRotation = Quaternion.LookRotation(inputManager.playerMovementValue, Vector2.zero); // Create a new rotation value, that's set to the current direction of the stick
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, playerRotationSpeed * Time.fixedDeltaTime); // Set the rotation to a rotation that turns to the prior specified rotation by a predefined speed
+            //transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, playerRotationSpeed * Time.fixedDeltaTime); // Set the rotation to a rotation that turns to the prior specified rotation by a predefined speed
         }
         else
         {
-            rigidBody.velocity = Vector3.zero;
+            rigidBody.linearVelocity = Vector2.zero;
         }
     }
 }

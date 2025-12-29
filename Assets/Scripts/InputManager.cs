@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
     [Header("Data")]
 
     [Tooltip("The value of the stick is placed into here to be used by the player character in game")]
-    public Vector3 playerMovementValue;
+    public Vector2 playerMovementValue;
 
     #endregion
 
@@ -21,8 +21,9 @@ public class InputManager : MonoBehaviour
         // We set a local variable to ensure each time called, the input is updated, and we need to define it so we can use its values in the Vector 3 value below.
         Vector2 movement = context.ReadValue<Vector2>();
 
-        // We use RigidBody.MovePosition to ensure collisions are accounted for. the y values is used in the z due to the OG value being Vector2
-        playerMovementValue = new Vector3(movement.x, 0, movement.y); 
+        // We use RigidBody.MovePosition to ensure collisions are accounted for.
+        playerMovementValue = new Vector2(movement.x, movement.y);
+        Debug.Log(playerMovementValue);
     }
 
     /// <summary>
