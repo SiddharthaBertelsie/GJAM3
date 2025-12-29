@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 8a4d48b678448c448bff9c95779a0c24
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6068199333771391902
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_0
+  - first:
+      213: 5957550166318348513
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_1
+  - first:
+      213: 5486941370669128666
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_2
+  - first:
+      213: -6398506356466332234
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_3
+  - first:
+      213: 1799253503228752457
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_4
+  - first:
+      213: 719122516417168805
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_5
+  - first:
+      213: -8354761420035917681
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_6
+  - first:
+      213: -464269738705010857
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_7
+  - first:
+      213: -533093980783611617
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_8
+  - first:
+      213: 5534761823999425760
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_9
+  - first:
+      213: 8804090575844168155
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_10
+  - first:
+      213: -508252038261894272
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_11
+  - first:
+      213: 8609927609386466440
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_12
+  - first:
+      213: -8016000593299620595
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_13
+  - first:
+      213: -8766545202803925538
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_14
+  - first:
+      213: 6205772214295865717
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_15
+  - first:
+      213: -4347829809972132046
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_16
+  - first:
+      213: -4201994331235643185
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_17
+  - first:
+      213: -768794114020989981
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_18
+  - first:
+      213: -6914226584839821698
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_19
+  - first:
+      213: 1300338844475366969
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_20
+  - first:
+      213: 4819233936859285571
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_21
+  - first:
+      213: -2418652216778768849
+    second: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191
+        width: 193
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c4b4c4bdc69cba0800000000000000
+      internalID: -6068199333771391902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_1
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 263
+        width: 61
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e879f2df487da250800000000000000
+      internalID: 5957550166318348513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 259
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adbd0260b18852c40800000000000000
+      internalID: 5486941370669128666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 191
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bdceb99e50f337a0800000000000000
+      internalID: -6398506356466332234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 127
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942b3d0478b38f810800000000000000
+      internalID: 1799253503228752457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_5
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 127
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a5c70d5e16daf900800000000000000
+      internalID: 719122516417168805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_6
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 127
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f88fe9ff0cced0c80800000000000000
+      internalID: -8354761420035917681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_7
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 127
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75f3688e1259e89f0800000000000000
+      internalID: -464269738705010857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f117e7359d11a98f0800000000000000
+      internalID: -533093980783611617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_9
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 63
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ecf0e3fd8c6fcc40800000000000000
+      internalID: 5534761823999425760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_10
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 63
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd15e8f8bb96e2a70800000000000000
+      internalID: 8804090575844168155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_11
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 63
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 083180bc67352f8f0800000000000000
+      internalID: -508252038261894272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_12
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 62
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88cfe4b1b8b9c7770800000000000000
+      internalID: 8609927609386466440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_13
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 35
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0d3e055ee171c090800000000000000
+      internalID: -8016000593299620595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_14
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 47
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edd977fc599f65680800000000000000
+      internalID: -8766545202803925538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_15
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 43
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579281603f45f1650800000000000000
+      internalID: 6205772214295865717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_16
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 0
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 237c1c8d2d769a3c0800000000000000
+      internalID: -4347829809972132046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_17
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 23
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc09e7a3b648fa5c0800000000000000
+      internalID: -4201994331235643185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_18
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 35
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e32e5893d1b455f0800000000000000
+      internalID: -768794114020989981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 57
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e766f02ed8bbb00a0800000000000000
+      internalID: -6914226584839821698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_20
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 7
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e98902a4bbb0210800000000000000
+      internalID: 1300338844475366969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_21
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34841007bbb51e240800000000000000
+      internalID: 4819233936859285571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_22
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 3
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2eb0b79f983f6ed0800000000000000
+      internalID: -2418652216778768849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_0: -6068199333771391902
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_1: 5957550166318348513
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_10: 8804090575844168155
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_11: -508252038261894272
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_12: 8609927609386466440
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_13: -8016000593299620595
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_14: -8766545202803925538
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_15: 6205772214295865717
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_16: -4347829809972132046
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_17: -4201994331235643185
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_18: -768794114020989981
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_19: -6914226584839821698
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_2: 5486941370669128666
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_20: 1300338844475366969
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_21: 4819233936859285571
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_22: -2418652216778768849
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_3: -6398506356466332234
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_4: 1799253503228752457
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_5: 719122516417168805
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_6: -8354761420035917681
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_7: -464269738705010857
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_8: -533093980783611617
+      tbjTHATS_A_LOT_OF_CHICKENS_-_transp_4-1_9: 5534761823999425760
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
