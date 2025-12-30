@@ -16,13 +16,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "New action",
-                    "type": "Button",
+                    "name": "Move Sword",
+                    "type": "Value",
                     "id": "12704045-9e91-41b5-9380-9bdfbc18a662",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -84,11 +84,11 @@
                 {
                     "name": "",
                     "id": "49dfa7fa-68d5-41a8-b864-8d93bc0cbf59",
-                    "path": "",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Move Sword",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

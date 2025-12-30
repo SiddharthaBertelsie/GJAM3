@@ -12,6 +12,8 @@ namespace GJAM3.Player
         [Tooltip("The value of the stick is placed into here to be used by the player character in game")]
         public Vector2 playerMovementValue;
 
+        public Vector2 swordMovementValue;
+
         #endregion
 
         /// <summary>
@@ -25,24 +27,28 @@ namespace GJAM3.Player
 
             // We use RigidBody.MovePosition to ensure collisions are accounted for.
             playerMovementValue = new Vector2(movement.x, movement.y);
-            Debug.Log(playerMovementValue);
+            //Debug.Log(playerMovementValue);
         }
 
         /// <summary>
         /// Here we call the method to grab or drop clothes when the south button is pressed
         /// </summary>
         /// <param name="context"></param>
-        public void Interact(InputAction.CallbackContext context)
+        public void MoveSword(InputAction.CallbackContext context)
         {
-            if (context.performed)
-            {
+            Vector2 movement = context.ReadValue<Vector2>();
 
-            }
+            swordMovementValue = new Vector2(movement.x, movement.y);
         }
 
         public Vector2 GetPlayerMovementValue()
         {
             return playerMovementValue;
+        }
+
+        public Vector2 GetSwordMovementValue()
+        {
+            return swordMovementValue;
         }
     }
 }
