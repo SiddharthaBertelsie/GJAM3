@@ -11,6 +11,8 @@ namespace GJAM3.Sword
 
         [SerializeField] private GameObject _swordSprite;
 
+        [SerializeField] private GameObject _playerObject;
+
         [SerializeField] private Camera _camera;
 
         [Header("Scripts")]
@@ -46,12 +48,22 @@ namespace GJAM3.Sword
             float angle = Mathf.Atan2(directionToRotateTo.y, directionToRotateTo.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-            if (_swordIsInRange)
+            Vector2 directionToMoveTo;
+
+            if (!_swordIsInRange)
             {
-                Vector3 directionToMoveTo = Vector3.MoveTowards(transform.position, screenPosition, 1);
+                if (Vector2.Distance(transform.position, _playerObject.transform.position) > 0.1f)
+                {
+                    directionToMoveTo = Vector2.MoveTowards(transform.position, _playerObject.transform.position, 1);
+                    transform.position = directionToMoveTo * 10 * Time.deltaTime;
+                }
+            }
+            else if (_swordIsInRange)
+            {
+                directionToMoveTo = Vector2.MoveTowards(transform.position, screenPosition, 1);
                 transform.position = directionToMoveTo * Time.deltaTime;
             }
-            
+
 
             // We want to enable the sword, before playing the animation
 
@@ -80,7 +92,6 @@ namespace GJAM3.Sword
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-
             if (collision.CompareTag("SwordRange"))
             {
                 _swordIsInRange = false;
