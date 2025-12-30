@@ -33,14 +33,17 @@ namespace GJAM3.Sword
 
             Vector2 readValue = _inputManager.GetSwordMovementValue();
 
-            Vector2 screenPosition = _camera.ScreenToWorldPoint(readValue);
+            Vector3 screenPosition = _camera.ScreenToWorldPoint(new Vector3(readValue.x, readValue.y, _camera.transform.position.z));
             Debug.Log(screenPosition);
 
             // We want to roatte the empty obj that the sword is attached to in the direction of the world space position we just got.
 
             Vector3 directionToRotateTo = Vector3.RotateTowards(transform.forward, screenPosition, 10 * Time.deltaTime, 0);
+            Vector3 directionToMoveTo = Vector3.MoveTowards(transform.position, screenPosition, 1);
 
-            transform.rotation = Quaternion.LookRotation(directionToRotateTo);
+            transform.rotation = Quaternion.LookRotation(screenPosition, Vector3.up);
+
+            
 
             // We want to enable the sword, before playing the animation
 
