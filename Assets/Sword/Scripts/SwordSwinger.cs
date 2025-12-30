@@ -7,6 +7,8 @@ namespace GJAM3.Sword
     {
         #region Variables
 
+        [SerializeField] private bool _swordIsInRange;
+
         [SerializeField] private GameObject _swordSprite;
 
         [SerializeField] private Camera _camera;
@@ -38,11 +40,17 @@ namespace GJAM3.Sword
 
             // We want to roatte the empty obj that the sword is attached to in the direction of the world space position we just got.
 
-            Vector3 directionToRotateTo = Vector3.RotateTowards(transform.forward, screenPosition, 10 * Time.deltaTime, 0);
-            Vector3 directionToMoveTo = Vector3.MoveTowards(transform.position, screenPosition, 1);
+            Vector3 directionToRotateTo = (screenPosition - transform.position).normalized;
+            directionToRotateTo.z = 0;
 
-            transform.rotation = Quaternion.LookRotation(screenPosition, Vector3.up);
+            float angle = Mathf.Atan2(directionToRotateTo.y, directionToRotateTo.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
+            if (_swordIsInRange)
+            {
+                Vector3 directionToMoveTo = Vector3.MoveTowards(transform.position, screenPosition, 1);
+                transform.position = directionToMoveTo * Time.deltaTime;
+            }
             
 
             // We want to enable the sword, before playing the animation
@@ -60,6 +68,23 @@ namespace GJAM3.Sword
         private void Update()
         {
             MoveSword();
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("SwordRange"))
+            {
+                _swordIsInRange = true;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+
+            if (collision.CompareTag("SwordRange"))
+            {
+                _swordIsInRange = false;
+            }
         }
 
         #endregion
