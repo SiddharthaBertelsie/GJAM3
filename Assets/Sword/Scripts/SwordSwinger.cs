@@ -15,6 +15,8 @@ namespace GJAM3.Sword
 
         [SerializeField] private Camera _camera;
 
+        [SerializeField] private Collider2D _swordRange;
+
         [Header("Scripts")]
 
         [SerializeField] private InputManager _inputManager;
@@ -50,20 +52,16 @@ namespace GJAM3.Sword
 
             Vector2 directionToMoveTo;
 
-            if (!_swordIsInRange)
+            if (_swordRange.bounds.Contains(transform.position) && Vector2.Distance(transform.position, _playerObject.transform.position) < 1f)
             {
-                if (Vector2.Distance(transform.position, _playerObject.transform.position) > 0.1f)
-                {
-                    directionToMoveTo = Vector2.MoveTowards(transform.position, _playerObject.transform.position, 1);
-                    transform.position = directionToMoveTo * 10 * Time.deltaTime;
-                }
+                directionToMoveTo = Vector2.MoveTowards(transform.position, screenPosition, 10 * Time.deltaTime);
+                transform.position = directionToMoveTo;
             }
-            else if (_swordIsInRange)
+            else if (Vector2.Distance(transform.position, _playerObject.transform.position) > 1f)
             {
-                directionToMoveTo = Vector2.MoveTowards(transform.position, screenPosition, 1);
-                transform.position = directionToMoveTo * Time.deltaTime;
+                directionToMoveTo = Vector2.MoveTowards(transform.position, _playerObject.transform.position, 10 * Time.deltaTime);
+                transform.position = directionToMoveTo;
             }
-
 
             // We want to enable the sword, before playing the animation
 
