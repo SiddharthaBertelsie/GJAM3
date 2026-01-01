@@ -3,15 +3,21 @@ using GJAM3.Player;
 
 namespace GJAM3.Sword
 {
-    public class SwordSwinger : MonoBehaviour
+    public class SwordMover : MonoBehaviour
     {
         #region Variables
 
+        [Header("Data")]
+
         [SerializeField] private bool _swordIsInRange;
+
+        [Header("Objects")]
 
         [SerializeField] private GameObject _swordSprite;
 
         [SerializeField] private GameObject _playerObject;
+
+        [Header("Components")]
 
         [SerializeField] private Camera _camera;
 
@@ -37,16 +43,19 @@ namespace GJAM3.Sword
             // The code:
             // We want to get the screen position of our mouse, and then convert it to a Vector2 world space position
 
+            // InputManager has values returned by input system
             Vector2 readValue = _inputManager.GetSwordMovementValue();
 
+            // From memory, the tutorial I got the idea to add the camera's z pos to here said that this would give the most accurate results
             Vector3 screenPosition = _camera.ScreenToWorldPoint(new Vector3(readValue.x, readValue.y, _camera.transform.position.z));
-            Debug.Log(screenPosition);
 
             // We want to roatte the empty obj that the sword is attached to in the direction of the world space position we just got.
 
+            // Normalized for smoother movement according to tutorial
             Vector3 directionToRotateTo = (screenPosition - transform.position).normalized;
             directionToRotateTo.z = 0;
 
+            // No idea what Atan2 is doing here to get the angle our sword points at. WIll need to find out later
             float angle = Mathf.Atan2(directionToRotateTo.y, directionToRotateTo.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
@@ -62,12 +71,6 @@ namespace GJAM3.Sword
                 directionToMoveTo = Vector2.MoveTowards(transform.position, _playerObject.transform.position, 10 * Time.deltaTime);
                 transform.position = directionToMoveTo;
             }
-
-            // We want to enable the sword, before playing the animation
-
-            _swordSprite.SetActive(true);
-
-            // The sword should disappear after the animation is done.
 
         }
 

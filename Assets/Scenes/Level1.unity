@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6410b6458be334409657221ab37bdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _swordAnimator: {fileID: 329710481}
   _inputManager: {fileID: 1155753989}
 --- !u!212 &329710483
 SpriteRenderer:
@@ -329,12 +330,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740102681}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1155753992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &740102685
 MonoBehaviour:
@@ -571,6 +572,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 12704045-9e91-41b5-9380-9bdfbc18a662
     m_ActionName: Keyboard&Mouse/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1155753989}
+        m_TargetAssemblyTypeName: GJAM3.Player.InputManager, Assembly-CSharp
+        m_MethodName: BasicAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a2119ac4-fcf5-4e97-b5e6-ab2732681912
+    m_ActionName: 'Keyboard&Mouse/Basic Attack[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Keyboard&Mouse
@@ -617,6 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovementValue: {x: 0, y: 0}
   swordMovementValue: {x: 0, y: 0}
+  basicAttackInputValue: 0
 --- !u!114 &1155753990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,6 +667,7 @@ Transform:
   - {fileID: 1437430440}
   - {fileID: 1989163220}
   - {fileID: 888643040}
+  - {fileID: 740102684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1155753993
@@ -2733,6 +2752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1989163220}
   - component: {fileID: 1989163221}
+  - component: {fileID: 1989163225}
   - component: {fileID: 1989163223}
   - component: {fileID: 1989163224}
   m_Layer: 0
@@ -2851,6 +2871,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1989163225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989163219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94d0a943450afc49913bac115050566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputManager: {fileID: 1155753989}
+  _swordAnimationManager: {fileID: 329710482}
 --- !u!1 &2140597531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,6 +2920,5 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 740102684}
   - {fileID: 793413155}
   - {fileID: 1155753992}

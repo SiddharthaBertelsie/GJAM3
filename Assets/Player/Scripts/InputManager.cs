@@ -14,6 +14,8 @@ namespace GJAM3.Player
 
         public Vector2 swordMovementValue;
 
+        public bool basicAttackInputValue;
+
         #endregion
 
         /// <summary>
@@ -41,6 +43,11 @@ namespace GJAM3.Player
             swordMovementValue = new Vector2(movement.x, movement.y);
         }
 
+        public void BasicAttack(InputAction.CallbackContext context)
+        {
+            basicAttackInputValue = context.performed;
+        }
+
         public Vector2 GetPlayerMovementValue()
         {
             return playerMovementValue;
@@ -49,6 +56,11 @@ namespace GJAM3.Player
         public Vector2 GetSwordMovementValue()
         {
             return swordMovementValue;
+        }
+
+        public bool GetBasicAttackInputValue()
+        {
+            return basicAttackInputValue;
         }
     }
 }
