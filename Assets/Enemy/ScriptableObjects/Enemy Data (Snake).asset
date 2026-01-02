@@ -15,5 +15,5 @@ MonoBehaviour:
   _startingHealth: 50
   _movementSpeed: 2
   _attackDamage: 20
-  _distanceToAttackFrom: 0.75
+  _distanceToAttackFrom: 1.2
   _attackCooldown: 1

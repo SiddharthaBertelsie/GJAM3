@@ -24,6 +24,8 @@ namespace GJAM3.Enemy
 
         [SerializeField] protected PlayerApproacher _playerApproacher;
 
+        [SerializeField] protected EnemyHealthManager _enemyHealthManager;
+
         #endregion
 
         #region Methods

@@ -1,11 +1,22 @@
 using UnityEngine;
 using GJAM3.Player;
+using GJAM3.Enemy;
 
 namespace GJAM3.Sword
 {
     public class BasicAttacker : MonoBehaviour
     {
         #region Variables
+
+        [Header("Data")]
+
+        [SerializeField] private bool _hasHitEnemy;
+
+        [SerializeField] private float _attackDamage;
+
+        [Header("Current Enemy Attacked")]
+
+        [SerializeField] private EnemyHealthManager _currentEnemyAttacked;
 
         [Header("Scripts")]
 
@@ -25,6 +36,15 @@ namespace GJAM3.Sword
             {
                 Debug.Log("Attack!");
                 _swordAnimationManager.PlayBasicAttackAnimation();
+
+                if (_hasHitEnemy)
+                {
+                    if (_currentEnemyAttacked != null)
+                    {
+                        Debug.Log("We have damaged the enemy!");
+                        _currentEnemyAttacked.DecrementHealth(_attackDamage);
+                    }
+                }
             }
         }
 
@@ -32,16 +52,30 @@ namespace GJAM3.Sword
 
         #region Unity Methods
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-
-        }
-
         // Update is called once per frame
         void Update()
         {
             PerformAttack();
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Enemy"))
+            {
+                Debug.Log("An enemy is in range");
+                _hasHitEnemy = true;
+                _currentEnemyAttacked = collision.GetComponent<EnemyHealthManager>();
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Enemy"))
+            {
+                Debug.Log("The enemy is now out of range");
+                _hasHitEnemy = false;
+                _currentEnemyAttacked = null;
+            }
         }
 
         #endregion

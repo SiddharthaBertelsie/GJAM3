@@ -15,11 +15,14 @@ namespace GJAM3.Enemy
 
         protected override void Attack()
         {
-            if (_playerApproacher.DistanceFromPlayerCheck() == true && timeUntilAttacking <= 0)
+            if (_enemyHealthManager.GetIsAliveValue())
             {
-                Debug.Log("We've met the conditions to attack the player");
-                timeUntilAttacking += attackCooldown;
-                GlobalMethods.instance.DamagePlayer(attackDamage);
+                if (_playerApproacher.DistanceFromPlayerCheck() == true && timeUntilAttacking <= 0)
+                {
+                    Debug.Log("We've met the conditions to attack the player");
+                    timeUntilAttacking += attackCooldown;
+                    GlobalMethods.instance.DamagePlayer(attackDamage);
+                }
             }
         }
 

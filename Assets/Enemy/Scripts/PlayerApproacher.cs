@@ -8,7 +8,7 @@ namespace GJAM3.Enemy
 
         [Header("Data")]
 
-        [SerializeField] private EnemyData _snakeEnemyData;
+        [SerializeField] private EnemyData _enemyData;
 
         [Tooltip("The rate of speed the AI will move toward the player at")]
         [SerializeField] private float _approachingSpeed;
@@ -24,21 +24,28 @@ namespace GJAM3.Enemy
         // The referecne to the player we move towards
         [SerializeField] private Transform playerTransform;
 
+        [Header("Scripts")]
+
+        [SerializeField] private EnemyHealthManager _enemyHealthManager;
+
         #endregion
 
         #region Methods
         public void MoveTowardPlayer()
         {
-            if (Vector2.Distance(transform.position, playerTransform.position) > _distanceToAttackFrom)
+            if (_enemyHealthManager.GetIsAliveValue())
             {
-                transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, _approachingSpeed * Time.deltaTime);
-                //RotateTowardsPlayer();
+                if (Vector2.Distance(transform.position, playerTransform.position) > _distanceToAttackFrom)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, _approachingSpeed * Time.deltaTime);
+                    //RotateTowardsPlayer();
 
-                SetIsInAttackDistanceValue(false);
-            }
-            else
-            {
-                SetIsInAttackDistanceValue(true);
+                    SetIsInAttackDistanceValue(false);
+                }
+                else
+                {
+                    SetIsInAttackDistanceValue(true);
+                }
             }
         }
 
@@ -72,8 +79,8 @@ namespace GJAM3.Enemy
 
         private void InitializeVariables()
         {
-            _approachingSpeed = _snakeEnemyData.MovementSpeed;
-            _distanceToAttackFrom = _snakeEnemyData.DistanceToAttackFrom;
+            _approachingSpeed = _enemyData.MovementSpeed;
+            _distanceToAttackFrom = _enemyData.DistanceToAttackFrom;
         }
 
         #endregion

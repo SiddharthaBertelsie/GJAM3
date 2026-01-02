@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - SwordRange
+  - Enemy
   layers:
   - Default
   - TransparentFX
