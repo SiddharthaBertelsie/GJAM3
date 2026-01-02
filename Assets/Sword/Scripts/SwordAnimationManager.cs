@@ -13,7 +13,7 @@ namespace GJAM3.Sword
 
         [SerializeField] private AnimationClip _animationClip;
 
-        [SerializeField] private bool _isPlayingAnimation;
+        [SerializeField] private bool _canPlayAnimation;
 
         [Header("Scripts")]
 
@@ -25,8 +25,7 @@ namespace GJAM3.Sword
 
         public void PlayBasicAttackAnimation()
         {
-            _isPlayingAnimation = true;
-            _swordAnimator.ResetTrigger("performBasicAttack");
+            _canPlayAnimation = false;
             _swordAnimator.ResetTrigger("idle");
 
             _swordAnimator.SetTrigger("performBasicAttack");
@@ -38,14 +37,20 @@ namespace GJAM3.Sword
             _swordAnimator.SetTrigger("idle");
 
             _swordAnimator.StopPlayback();
-            _isPlayingAnimation = false;
+            _canPlayAnimation = true;
         }
 
-        public bool CheckIfIsAnimatorPlaying()
+        public bool CheckIfCanPlayAnimation()
         {
-            return _isPlayingAnimation;
+            return _canPlayAnimation;
         }
 
         #endregion
+
+        private void Start()
+        {
+            _swordAnimator.SetTrigger("idle");
+            _canPlayAnimation= true;
+        }
     }
 }

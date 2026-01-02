@@ -21,7 +21,7 @@ namespace GJAM3.Sword
         private void PerformAttack()
         {
             // Greater than 0.1 means the button has been pressed
-            if (_inputManager.GetBasicAttackInputValue() == true && _swordAnimationManager.CheckIfIsAnimatorPlaying() == false)
+            if (_inputManager.GetBasicAttackInputValue() == true && _swordAnimationManager.CheckIfCanPlayAnimation() == true)
             {
                 Debug.Log("Attack!");
                 _swordAnimationManager.PlayBasicAttackAnimation();
