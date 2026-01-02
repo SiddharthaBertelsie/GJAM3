@@ -53,6 +53,8 @@ namespace GJAM3.Player
             if (_playerHealth <= 0)
             {
                 Debug.Log("Oh no! I've died!");
+                MenuManager.instance.ToggleGameOverMenu(true);
+                GameToggler.instance.ToggleGameStarted(false);
             }
         }
 

@@ -15,7 +15,7 @@ namespace GJAM3.Enemy
 
         protected override void Attack()
         {
-            if (_enemyHealthManager.GetIsAliveValue() && GameStarter.instance.GameStarted)
+            if (_enemyHealthManager.GetIsAliveValue() && GameToggler.instance.GameStarted)
             {
                 if (_playerApproacher.DistanceFromPlayerCheck() == true && timeUntilAttacking <= 0)
                 {

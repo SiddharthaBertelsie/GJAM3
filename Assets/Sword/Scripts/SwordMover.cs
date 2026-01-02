@@ -35,7 +35,7 @@ namespace GJAM3.Sword
 
         private void MoveSword()
         {
-            if (GameStarter.instance.GameStarted)
+            if (GameToggler.instance.GameStarted)
             {
                 // Before running the code, we want to have a empty object that the sword sprite + collider is attachted to.
                 // It will have an anim which swings in an arc.

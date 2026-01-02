@@ -1,10 +1,14 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GJAM3
 {
-    public class GameStarter : MonoBehaviour
+    /// <summary>
+    /// Handles starting and ending the game
+    /// </summary>
+    public class GameToggler : MonoBehaviour
     {
-        public static GameStarter instance;
+        public static GameToggler instance;
 
         private void Awake()
         {
@@ -45,6 +49,19 @@ namespace GJAM3
             }
 
             _gameStarted = value;
+        }
+
+        public void RestartGame()
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        /// <summary>
+        /// Remove this if WebGl can be done
+        /// </summary>
+        public void ExitGame()
+        {
+            Application.Quit();
         }
 
         #endregion

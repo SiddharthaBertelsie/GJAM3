@@ -32,7 +32,7 @@ namespace GJAM3.Player
         /// </summary>
         private void Movement()
         {
-            if (GameStarter.instance.GameStarted)
+            if (GameToggler.instance.GameStarted)
             {
                 // This code here is responsible for turning the player in the direction of the gamepad stick
                 if (inputManager.playerMovementValue != Vector2.zero) // When the stick is in the dead zone, we'll still keep the same rotation before hand.

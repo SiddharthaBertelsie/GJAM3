@@ -26,7 +26,7 @@ namespace GJAM3
 
         [Header("Exit Menu")]
 
-        [SerializeField] private GameObject _exitMenu;
+        [SerializeField] private GameObject _gameOverMenu;
 
         #endregion
 
@@ -37,9 +37,19 @@ namespace GJAM3
             _startMenu.SetActive(value);
         }
 
-        public void ToggleExitMenu(bool value)
+        public void ToggleGameOverMenu(bool value)
         {
-            _exitMenu.SetActive(value);
+            _gameOverMenu.SetActive(value);
+        }
+
+        #endregion
+
+        #region Unity Methods
+
+        private void Start()
+        {
+            ToggleStartMenu(true);
+            ToggleGameOverMenu(false);
         }
 
         #endregion
