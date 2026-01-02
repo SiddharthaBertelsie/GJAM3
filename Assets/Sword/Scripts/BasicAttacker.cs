@@ -31,18 +31,21 @@ namespace GJAM3.Sword
 
         private void PerformAttack()
         {
-            // Greater than 0.1 means the button has been pressed
-            if (_inputManager.GetBasicAttackInputValue() == true && _swordAnimationManager.CheckIfCanPlayAnimation() == true)
+            if (GameStarter.instance.GameStarted)
             {
-                Debug.Log("Attack!");
-                _swordAnimationManager.PlayBasicAttackAnimation();
-
-                if (_hasHitEnemy)
+                // Greater than 0.1 means the button has been pressed
+                if (_inputManager.GetBasicAttackInputValue() == true && _swordAnimationManager.CheckIfCanPlayAnimation() == true)
                 {
-                    if (_currentEnemyAttacked != null)
+                    Debug.Log("Attack!");
+                    _swordAnimationManager.PlayBasicAttackAnimation();
+
+                    if (_hasHitEnemy)
                     {
-                        Debug.Log("We have damaged the enemy!");
-                        _currentEnemyAttacked.DecrementHealth(_attackDamage);
+                        if (_currentEnemyAttacked != null)
+                        {
+                            Debug.Log("We have damaged the enemy!");
+                            _currentEnemyAttacked.DecrementHealth(_attackDamage);
+                        }
                     }
                 }
             }

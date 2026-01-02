@@ -35,42 +35,44 @@ namespace GJAM3.Sword
 
         private void MoveSword()
         {
-            // Before running the code, we want to have a empty object that the sword sprite + collider is attachted to.
-            // It will have an anim which swings in an arc.
-            // The sword will be facing straight ahead on the object
-
-            // The code:
-            // We want to get the screen position of our mouse, and then convert it to a Vector2 world space position
-
-            // InputManager has values returned by input system
-            Vector2 readValue = _inputManager.GetSwordMovementValue();
-
-            // From memory, the tutorial I got the idea to add the camera's z pos to here said that this would give the most accurate results
-            Vector3 screenPosition = _camera.ScreenToWorldPoint(new Vector3(readValue.x, readValue.y, _camera.transform.position.z));
-
-            // We want to roatte the empty obj that the sword is attached to in the direction of the world space position we just got.
-
-            // Normalized for smoother movement according to tutorial
-            Vector3 directionToRotateTo = (screenPosition - transform.position).normalized;
-            directionToRotateTo.z = 0;
-
-            // This creates an angle based of two planes we input here. We convert it to degrees to get the angle as Atan2 returns radians
-            float angle = Mathf.Atan2(directionToRotateTo.y, directionToRotateTo.x) * Mathf.Rad2Deg;
-            _swordSpriteParent.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-            Vector2 directionToMoveTo;
-
-            if (_swordRange.bounds.Contains(transform.position) && Vector2.Distance(transform.position, _playerObject.transform.position) < 1f)
+            if (GameStarter.instance.GameStarted)
             {
-                directionToMoveTo = Vector2.MoveTowards(transform.position, screenPosition, 10 * Time.deltaTime);
-                transform.position = directionToMoveTo;
-            }
-            else if (Vector2.Distance(transform.position, _playerObject.transform.position) > 1f)
-            {
-                directionToMoveTo = Vector2.MoveTowards(transform.position, _playerObject.transform.position, 10 * Time.deltaTime);
-                transform.position = directionToMoveTo;
-            }
+                // Before running the code, we want to have a empty object that the sword sprite + collider is attachted to.
+                // It will have an anim which swings in an arc.
+                // The sword will be facing straight ahead on the object
 
+                // The code:
+                // We want to get the screen position of our mouse, and then convert it to a Vector2 world space position
+
+                // InputManager has values returned by input system
+                Vector2 readValue = _inputManager.GetSwordMovementValue();
+
+                // From memory, the tutorial I got the idea to add the camera's z pos to here said that this would give the most accurate results
+                Vector3 screenPosition = _camera.ScreenToWorldPoint(new Vector3(readValue.x, readValue.y, _camera.transform.position.z));
+
+                // We want to roatte the empty obj that the sword is attached to in the direction of the world space position we just got.
+
+                // Normalized for smoother movement according to tutorial
+                Vector3 directionToRotateTo = (screenPosition - transform.position).normalized;
+                directionToRotateTo.z = 0;
+
+                // This creates an angle based of two planes we input here. We convert it to degrees to get the angle as Atan2 returns radians
+                float angle = Mathf.Atan2(directionToRotateTo.y, directionToRotateTo.x) * Mathf.Rad2Deg;
+                _swordSpriteParent.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+                Vector2 directionToMoveTo;
+
+                if (_swordRange.bounds.Contains(transform.position) && Vector2.Distance(transform.position, _playerObject.transform.position) < 1f)
+                {
+                    directionToMoveTo = Vector2.MoveTowards(transform.position, screenPosition, 10 * Time.deltaTime);
+                    transform.position = directionToMoveTo;
+                }
+                else if (Vector2.Distance(transform.position, _playerObject.transform.position) > 1f)
+                {
+                    directionToMoveTo = Vector2.MoveTowards(transform.position, _playerObject.transform.position, 10 * Time.deltaTime);
+                    transform.position = directionToMoveTo;
+                }
+            }
         }
 
         #endregion

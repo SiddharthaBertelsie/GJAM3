@@ -32,18 +32,21 @@ namespace GJAM3.Player
         /// </summary>
         private void Movement()
         {
-            // This code here is responsible for turning the player in the direction of the gamepad stick
-            if (inputManager.playerMovementValue != Vector2.zero) // When the stick is in the dead zone, we'll still keep the same rotation before hand.
+            if (GameStarter.instance.GameStarted)
             {
-                rigidBody.linearVelocity = inputManager.playerMovementValue * Time.fixedDeltaTime * playerSpeed;
+                // This code here is responsible for turning the player in the direction of the gamepad stick
+                if (inputManager.playerMovementValue != Vector2.zero) // When the stick is in the dead zone, we'll still keep the same rotation before hand.
+                {
+                    rigidBody.linearVelocity = inputManager.playerMovementValue * Time.fixedDeltaTime * playerSpeed;
 
-                //Quaternion toRotation = Quaternion.LookRotation(inputManager.playerMovementValue, Vector2.zero); // Create a new rotation value, that's set to the current direction of the stick
+                    //Quaternion toRotation = Quaternion.LookRotation(inputManager.playerMovementValue, Vector2.zero); // Create a new rotation value, that's set to the current direction of the stick
 
-                //transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, playerRotationSpeed * Time.fixedDeltaTime); // Set the rotation to a rotation that turns to the prior specified rotation by a predefined speed
-            }
-            else
-            {
-                rigidBody.linearVelocity = Vector2.zero;
+                    //transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, playerRotationSpeed * Time.fixedDeltaTime); // Set the rotation to a rotation that turns to the prior specified rotation by a predefined speed
+                }
+                else
+                {
+                    rigidBody.linearVelocity = Vector2.zero;
+                }
             }
         }
 

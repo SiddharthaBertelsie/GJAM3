@@ -33,7 +33,7 @@ namespace GJAM3.Enemy
         #region Methods
         public void MoveTowardPlayer()
         {
-            if (_enemyHealthManager.GetIsAliveValue())
+            if (_enemyHealthManager.GetIsAliveValue() && GameStarter.instance.GameStarted)
             {
                 if (Vector2.Distance(transform.position, playerTransform.position) > _distanceToAttackFrom)
                 {
