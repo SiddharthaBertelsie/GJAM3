@@ -35,7 +35,6 @@ namespace GJAM3.Sword
 
         private void MoveSword()
         {
-
             // Before running the code, we want to have a empty object that the sword sprite + collider is attachted to.
             // It will have an anim which swings in an arc.
             // The sword will be facing straight ahead on the object
@@ -55,23 +54,22 @@ namespace GJAM3.Sword
             Vector3 directionToRotateTo = (screenPosition - transform.position).normalized;
             directionToRotateTo.z = 0;
 
-            // No idea what Atan2 is doing here to get the angle our sword points at. WIll need to find out later
+            // This creates an angle based of two planes we input here. We convert it to degrees to get the angle as Atan2 returns radians
             float angle = Mathf.Atan2(directionToRotateTo.y, directionToRotateTo.x) * Mathf.Rad2Deg;
-            //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             _swordSpriteParent.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            //Vector2 directionToMoveTo;
+            Vector2 directionToMoveTo;
 
-            //if (_swordRange.bounds.Contains(transform.position) && Vector2.Distance(transform.position, _playerObject.transform.position) < 1f)
-            //{
-            //    directionToMoveTo = Vector2.MoveTowards(transform.position, screenPosition, 10 * Time.deltaTime);
-            //    transform.position = directionToMoveTo;
-            //}
-            //else if (Vector2.Distance(transform.position, _playerObject.transform.position) > 1f)
-            //{
-            //    directionToMoveTo = Vector2.MoveTowards(transform.position, _playerObject.transform.position, 10 * Time.deltaTime);
-            //    transform.position = directionToMoveTo;
-            //}
+            if (_swordRange.bounds.Contains(transform.position) && Vector2.Distance(transform.position, _playerObject.transform.position) < 1f)
+            {
+                directionToMoveTo = Vector2.MoveTowards(transform.position, screenPosition, 10 * Time.deltaTime);
+                transform.position = directionToMoveTo;
+            }
+            else if (Vector2.Distance(transform.position, _playerObject.transform.position) > 1f)
+            {
+                directionToMoveTo = Vector2.MoveTowards(transform.position, _playerObject.transform.position, 10 * Time.deltaTime);
+                transform.position = directionToMoveTo;
+            }
 
         }
 
