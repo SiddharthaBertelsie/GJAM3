@@ -25,12 +25,14 @@ namespace GJAM3.Player
         public void IncrementHealth(float valueToChangeBy)
         {
             _playerHealth += valueToChangeBy;
+            MenuManager.instance.UpdateHUDHealthText(_playerHealth);
         }
 
         public void DecrementHealth(float valueToChangeBy)
         {
             _playerHealth -= valueToChangeBy;
             Debug.Log("Ouch! I've been dealt [" + valueToChangeBy + "] of damage!");
+            MenuManager.instance.UpdateHUDHealthText(_playerHealth);
         }
 
         public void SetHealth(float valueToChangeBy)
@@ -67,6 +69,8 @@ namespace GJAM3.Player
             SetHealth(_playerMaxHealth);
 
             Debug.Log("The health of the AI is now: " + _playerHealth);
+
+            MenuManager.instance.UpdateHUDHealthText(GetHealth());
         }
 
         private void Update()

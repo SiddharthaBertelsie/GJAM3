@@ -1,3 +1,6 @@
+using GJAM3.Player;
+using System.Xml.Schema;
+using TMPro;
 using UnityEngine;
 
 namespace GJAM3
@@ -28,6 +31,16 @@ namespace GJAM3
 
         [SerializeField] private GameObject _gameOverMenu;
 
+        [Header("HUD")]
+
+        [SerializeField] private GameObject _HUDMenu;
+
+        [SerializeField] private TextMeshProUGUI _healthText;
+
+        [Header("Scripts")]
+
+        [SerializeField] private PlayerHealthManager _playerHealthManager;
+
         #endregion
 
         #region Methods
@@ -42,6 +55,25 @@ namespace GJAM3
             _gameOverMenu.SetActive(value);
         }
 
+        public void ToggleHUDMenu(bool value)
+        {
+            switch (value)
+            {
+                case true:
+                    _HUDMenu.SetActive(true);
+                    UpdateHUDHealthText(_playerHealthManager.GetHealth());
+                    break;
+                case false:
+                    _HUDMenu.SetActive(false);
+                    break;
+            }
+        }
+
+        public void UpdateHUDHealthText(float value)
+        {
+            _healthText.text = "Health: " + value.ToString();
+        }
+
         #endregion
 
         #region Unity Methods
@@ -50,6 +82,7 @@ namespace GJAM3
         {
             ToggleStartMenu(true);
             ToggleGameOverMenu(false);
+            ToggleHUDMenu(false);
         }
 
         #endregion
