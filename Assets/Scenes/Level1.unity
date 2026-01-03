@@ -9404,6 +9404,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5330253480601824567, guid: 42b39abe6c9a26b49ac72510e5e45da6, type: 3}
+      propertyPath: _playerActionAsset
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: e98b3b3983ffeb04b85014e0714c9c63, type: 3}
+    - target: {fileID: 5330253480601824567, guid: 42b39abe6c9a26b49ac72510e5e45da6, type: 3}
+      propertyPath: _basicAttack.m_Name
+      value: Basic Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330253480601824567, guid: 42b39abe6c9a26b49ac72510e5e45da6, type: 3}
+      propertyPath: basicAttackInputValue
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

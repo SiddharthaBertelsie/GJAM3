@@ -16,7 +16,15 @@ namespace GJAM3.Player
 
         public bool basicAttackInputValue;
 
+        [Header("Input Actions")]
+
+        [SerializeField] private InputActionAsset _playerActionAsset;
+
+        private InputAction _basicAttack;
+
         #endregion
+
+        #region Methods
 
         /// <summary>
         /// Here, we obtain the movement value form the stick and set it to the variable,
@@ -43,9 +51,16 @@ namespace GJAM3.Player
             swordMovementValue = new Vector2(movement.x, movement.y);
         }
 
-        public void BasicAttack(InputAction.CallbackContext context)
+        public bool IsBasicAttackPerformed()
         {
-            basicAttackInputValue = context.performed;
+            if (_basicAttack.WasPerformedThisFrame())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public Vector2 GetPlayerMovementValue()
@@ -62,5 +77,21 @@ namespace GJAM3.Player
         {
             return basicAttackInputValue;
         }
+
+        private void InitializeVariables()
+        {
+            _basicAttack = _playerActionAsset.FindAction("Basic Attack", false);
+        }
+
+        #endregion
+
+        #region Unity Methods
+
+        private void Start()
+        {
+            InitializeVariables();
+        }
+
+        #endregion
     }
 }

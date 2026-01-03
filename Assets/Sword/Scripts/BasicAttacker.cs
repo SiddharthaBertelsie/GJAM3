@@ -34,7 +34,7 @@ namespace GJAM3.Sword
             if (GameToggler.instance.GameStarted)
             {
                 // Greater than 0.1 means the button has been pressed
-                if (_inputManager.GetBasicAttackInputValue() == true && _swordAnimationManager.CheckIfCanPlayAnimation() == true)
+                if (_inputManager.IsBasicAttackPerformed())
                 {
                     Debug.Log("Attack!");
                     _swordAnimationManager.PlayBasicAttackAnimation();

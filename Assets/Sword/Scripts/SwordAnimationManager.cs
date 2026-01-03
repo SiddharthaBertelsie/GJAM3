@@ -25,7 +25,6 @@ namespace GJAM3.Sword
 
         public void PlayBasicAttackAnimation()
         {
-            _canPlayAnimation = false;
             _swordAnimator.ResetTrigger("idle");
 
             _swordAnimator.SetTrigger("performBasicAttack");
@@ -34,23 +33,14 @@ namespace GJAM3.Sword
         public void ResetTriggers()
         {
             _swordAnimator.ResetTrigger("performBasicAttack");
+
             _swordAnimator.SetTrigger("idle");
-
-            _swordAnimator.StopPlayback();
-            _canPlayAnimation = true;
         }
-
-        public bool CheckIfCanPlayAnimation()
-        {
-            return _canPlayAnimation;
-        }
-
         #endregion
 
         private void Start()
         {
             _swordAnimator.SetTrigger("idle");
-            _canPlayAnimation= true;
         }
     }
 }
