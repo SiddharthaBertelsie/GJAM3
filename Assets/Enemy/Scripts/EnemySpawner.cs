@@ -10,6 +10,8 @@ namespace GJAM3.Enemy
 
         private float _timeToWait;
 
+        [SerializeField] private int secondsUntillIntervalIncrease;
+
         [SerializeField] private GameObject[] _enemiesToSpawn;
 
         [SerializeField] private Transform[] _enemySpawnLocations;
@@ -51,6 +53,21 @@ namespace GJAM3.Enemy
             if (_timeToWait > 0)
             {
                 _timeToWait -= Time.deltaTime;
+            }
+        }
+
+        public void CheckToDecreaseSpawnCooldown()
+        {
+            secondsUntillIntervalIncrease++;
+
+            if (secondsUntillIntervalIncrease >= 5)
+            {
+                if (_spawnCooldownTime > 0.2f)
+                {
+                    _spawnCooldownTime -= 0.1f;
+                }
+
+                secondsUntillIntervalIncrease = 0;
             }
         }
 
