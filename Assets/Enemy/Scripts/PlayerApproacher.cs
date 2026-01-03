@@ -81,6 +81,7 @@ namespace GJAM3.Enemy
         {
             _approachingSpeed = _enemyData.MovementSpeed;
             _distanceToAttackFrom = _enemyData.DistanceToAttackFrom;
+            playerTransform = GlobalMethods.instance.GetPlayerTransform();
         }
 
         #endregion

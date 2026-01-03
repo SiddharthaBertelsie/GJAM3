@@ -63,6 +63,7 @@ namespace GJAM3.Enemy
             {
                 Debug.Log("Oh no! I've died!");
                 _isAlive = false;
+                Destroy(gameObject);
             }
         }
 

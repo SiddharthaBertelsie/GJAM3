@@ -61,7 +61,7 @@ namespace GJAM3
             {
                 case true:
                     _HUDMenu.SetActive(true);
-                    UpdateHUDHealthText(_playerHealthManager.GetHealth());
+                    UpdateHUDHealthText(_playerHealthManager.GetMaxHealth());
                     break;
                 case false:
                     _HUDMenu.SetActive(false);

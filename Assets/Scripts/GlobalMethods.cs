@@ -21,6 +21,8 @@ namespace GJAM3
 
         #region Variables
 
+        [SerializeField] private Transform _playerTransform;
+
         [SerializeField] private PlayerHealthManager _playerHealthManager;
 
         #endregion
@@ -28,6 +30,11 @@ namespace GJAM3
         public void DamagePlayer(float amount)
         {
             _playerHealthManager.DecrementHealth(amount);
+        }
+
+        public Transform GetPlayerTransform()
+        {
+            return _playerTransform;
         }
     }
 }
