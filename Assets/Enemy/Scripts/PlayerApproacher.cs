@@ -13,7 +13,7 @@ namespace GJAM3.Enemy
         [Tooltip("The rate of speed the AI will move toward the player at")]
         [SerializeField] private float _approachingSpeed;
 
-        [Tooltip("How close the AI needs to be to the player before attack them witn a close-ranged attack")]
+        [Tooltip("How close the AI needs to be to the player before attack them witn a close-ranged attack. Initialized by EnemyDATA Scriptable obj")]
         [SerializeField] private float _distanceToAttackFrom;
 
         // This bool is what tells this and other scripts when the AI has met or exceeded the specified distance between them and player

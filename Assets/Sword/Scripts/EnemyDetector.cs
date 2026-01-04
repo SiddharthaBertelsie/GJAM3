@@ -31,7 +31,7 @@ namespace GJAM3.Sword
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Enemy"))
+            if (collision.CompareTag("Enemy") || collision.CompareTag("Goblin"))
             {
                 Debug.Log("An enemy is in range");
                 _hasHitEnemy = true;
@@ -41,7 +41,7 @@ namespace GJAM3.Sword
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.CompareTag("Enemy"))
+            if (collision.CompareTag("Enemy") || collision.CompareTag("Goblin"))
             {
                 Debug.Log("The enemy is now out of range");
                 _hasHitEnemy = false;

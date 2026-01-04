@@ -6,6 +6,8 @@ TagManager:
   tags:
   - SwordRange
   - Enemy
+  - Fireball
+  - Goblin
   layers:
   - Default
   - TransparentFX
