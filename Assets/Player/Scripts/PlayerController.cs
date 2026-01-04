@@ -1,3 +1,4 @@
+using GJAM3.Sword;
 using UnityEngine;
 
 namespace GJAM3.Player
@@ -24,6 +25,8 @@ namespace GJAM3.Player
         [Header("Script")]
 
         [SerializeField] private InputManager inputManager;
+
+        [SerializeField] private DashSlasher _dashSlasher;
 
         #endregion
 
@@ -64,7 +67,7 @@ namespace GJAM3.Player
 
         private void Update()
         {
-            if (inputManager.IsDashSlashPerformed())
+            if (inputManager.IsDashSlashInProgress())
             {
                 isSpecialMoveActive = true;
             }

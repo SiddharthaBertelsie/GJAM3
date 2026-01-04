@@ -75,6 +75,18 @@ namespace GJAM3.Player
             }
         }
 
+        public bool IsDashSlashInProgress()
+        {
+            if (_dashSlasher.IsInProgress())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public Vector2 GetPlayerMovementValue()
         {
             return playerMovementValue;

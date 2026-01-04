@@ -11,6 +11,8 @@ namespace GJAM3.Sword
 
         [SerializeField] private float _dashSlashSpeed;
 
+        [SerializeField] private bool _canDashSlash;
+
         [Header("Components")]
 
         [SerializeField] private Rigidbody2D _rigidBody;
@@ -23,6 +25,10 @@ namespace GJAM3.Sword
 
         [SerializeField] private SwordMover _swordMover;
 
+        [SerializeField] private DashSlashEnabler _dashSlashEnabler;
+
+        [SerializeField] private DashSlashHUDUpdater _dashSlashHUDUpdater;
+
         #endregion
 
         #region Methods
@@ -31,10 +37,11 @@ namespace GJAM3.Sword
         {
             if (GameToggler.instance.GameStarted)
             {
-                if (_inputManager.IsDashSlashPerformed())
+                if (_canDashSlash && _dashSlashEnabler.GetDashSlashAmount() > 0)
                 {
                     Debug.Log("Performed Dash Slash!");
-                    _rigidBody.AddForce(Vector2.down * _dashSlashSpeed, ForceMode2D.Impulse);
+                    _rigidBody.AddForce(_swordMover.GetCurrentDirectionRotatingTo() * _dashSlashSpeed, ForceMode2D.Impulse);
+                    _dashSlashEnabler.RemoveDashSlash();
                 }
             }
         }
@@ -44,13 +51,21 @@ namespace GJAM3.Sword
         #region Unity Methods
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        void Update()
         {
-
+            switch (_inputManager.IsDashSlashInProgress())
+            {
+                case true:
+                    _canDashSlash = true;
+                    break;
+                case false:
+                    _canDashSlash = false;
+                    break;
+            }
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             PerformDashSlash();
         }

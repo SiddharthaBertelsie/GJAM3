@@ -1,4 +1,6 @@
+using GJAM3.Sword;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GJAM3.Enemy
 {
@@ -63,6 +65,7 @@ namespace GJAM3.Enemy
             {
                 Debug.Log("Oh no! I've died!");
                 _isAlive = false;
+                DashSlashEnabler.instance.AddDashSlash();
                 Destroy(gameObject);
             }
         }
