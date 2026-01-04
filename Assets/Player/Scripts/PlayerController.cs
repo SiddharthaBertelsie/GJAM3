@@ -55,6 +55,11 @@ namespace GJAM3.Player
             }
         }
 
+        public float GetPlayerMovementSpeed()
+        {
+            return playerSpeed;
+        }
+
         #endregion
 
         #region Unity Methods

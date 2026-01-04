@@ -13,6 +13,8 @@ namespace GJAM3.Sword
 
         [SerializeField] private bool _canDashSlash;
 
+        private bool _currentlyDashSlashing;
+
         [Header("Components")]
 
         [SerializeField] private Rigidbody2D _rigidBody;
@@ -29,9 +31,25 @@ namespace GJAM3.Sword
 
         [SerializeField] private DashSlashHUDUpdater _dashSlashHUDUpdater;
 
+        [SerializeField] private PlayerController _playerController;
+
         #endregion
 
         #region Methods
+
+        private void CheckToDoDashSlash()
+        {
+            switch (_inputManager.IsDashSlashPerformed())
+            {
+                case true:
+                    _canDashSlash = true;
+                    PerformDashSlash();
+                    break;
+                case false:
+                    _canDashSlash = false;
+                    break;
+            }
+        }
 
         private void PerformDashSlash()
         {
@@ -42,6 +60,25 @@ namespace GJAM3.Sword
                     Debug.Log("Performed Dash Slash!");
                     _rigidBody.AddForce(_swordMover.GetCurrentDirectionRotatingTo() * _dashSlashSpeed, ForceMode2D.Impulse);
                     _dashSlashEnabler.RemoveDashSlash();
+                    _currentlyDashSlashing = true;
+                }
+            }
+        }
+
+        private void DamageWithDashSlash()
+        {
+            // If we have collided with an enemy, damage that enemy
+            if (_currentlyDashSlashing)
+            {
+                if (_enemyDetector.GetHasHitEnemyValue() && _enemyDetector.GetEnemyToAttack())
+                {
+                    _enemyDetector.GetEnemyToAttack().DecrementHealth(50);
+
+                    // Check if our velocity has at elast returned to the regualr walking pace before ending the Dash Slash
+                    if (_rigidBody.linearVelocity.x <= _playerController.GetPlayerMovementSpeed() || _rigidBody.linearVelocity.x >= -_playerController.GetPlayerMovementSpeed() && _rigidBody.linearVelocity.y <= _playerController.GetPlayerMovementSpeed() || _rigidBody.linearVelocity.y >= -_playerController.GetPlayerMovementSpeed())
+                    {
+                        _currentlyDashSlashing = false;
+                    }
                 }
             }
         }
@@ -53,21 +90,16 @@ namespace GJAM3.Sword
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Update()
         {
-            switch (_inputManager.IsDashSlashInProgress())
-            {
-                case true:
-                    _canDashSlash = true;
-                    break;
-                case false:
-                    _canDashSlash = false;
-                    break;
-            }
+            CheckToDoDashSlash();
+
+            DamageWithDashSlash();
         }
 
         // Update is called once per frame
         void FixedUpdate()
         {
-            PerformDashSlash();
+            //PerformDashSlash();
+            //Debug.Log(_rigidBody.linearVelocity);
         }
 
         #endregion
