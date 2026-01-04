@@ -32,7 +32,7 @@ namespace GJAM3.Timer
                     Mathf.RoundToInt(_elapsedTime);
                     _timerText.text = "Time: " + _elapsedTime;
                     _currentElapsedTime = 0;
-                    _enemySpawner.CheckToDecreaseSpawnCooldown();
+                    _enemySpawner.CheckToIncreaseDifficulty();
                 }
             }
         }

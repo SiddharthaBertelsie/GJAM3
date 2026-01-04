@@ -18,6 +18,10 @@ namespace GJAM3.Enemy
 
         [SerializeField] protected float timeUntilAttacking;
 
+        [SerializeField] protected float attackDelayAmount;
+
+        protected bool isDelayOver;
+
         protected Coroutine attackCoroutine = null;
 
         [Header("Scripts")]
@@ -39,6 +43,19 @@ namespace GJAM3.Enemy
             if (timeUntilAttacking > 0)
             {
                 timeUntilAttacking -= Time.deltaTime;
+            }
+        }
+
+        protected void DelayAttack()
+        {
+            if (timeUntilAttacking > 0)
+            {
+                timeUntilAttacking -= Time.deltaTime;
+
+                if (timeUntilAttacking <= 0)
+                {
+                    isDelayOver = true;
+                }
             }
         }
 

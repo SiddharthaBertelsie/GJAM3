@@ -21,10 +21,22 @@ namespace GJAM3.Enemy
             {
                 if (_playerApproacher.DistanceFromPlayerCheck() == true && timeUntilAttacking <= 0)
                 {
-                    Debug.Log("We've met the conditions to attack the player");
-                    timeUntilAttacking += attackCooldown;
-                    _snakeSFXPlayer.PlaySoundEffect(1, transform.position, 1, Random.Range(0.8f, 1.2f));
-                    GlobalMethods.instance.DamagePlayer(attackDamage);
+                    switch (isDelayOver)
+                    {
+                        case false:
+                            if (timeUntilAttacking <= 0)
+                            {
+                                timeUntilAttacking += attackDelayAmount;
+                            }
+                            break;
+                        case true:
+                            Debug.Log("We've met the conditions to attack the player");
+                            timeUntilAttacking += attackCooldown;
+                            _snakeSFXPlayer.PlaySoundEffect(1, transform.position, 1, Random.Range(0.8f, 1.2f));
+                            GlobalMethods.instance.DamagePlayer(attackDamage);
+                            isDelayOver = false;
+                            break;
+                    }
                 }
             }
         }
@@ -34,6 +46,7 @@ namespace GJAM3.Enemy
             attackDamage = _enemyData.AttackDamage;
             distanceToAttackFrom = _enemyData.DistanceToAttackFrom;
             attackCooldown = _enemyData.AttackCooldown;
+            timeUntilAttacking += attackCooldown;
 
             _onInAttackDistance = null;
         }
@@ -51,6 +64,7 @@ namespace GJAM3.Enemy
         {
             Attack();
             CooldownAttack();
+            DelayAttack();
         }
 
         #endregion

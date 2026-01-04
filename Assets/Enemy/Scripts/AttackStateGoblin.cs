@@ -22,15 +22,26 @@ namespace GJAM3.Enemy
             {
                 if (_playerApproacher.DistanceFromPlayerCheck() == true && timeUntilAttacking <= 0)
                 {
-                    Debug.Log("We've met the conditions to attack the player");
-                    // Instantiate fire ball here
-                    _fireballShooter.ShootFireball();
-
-                    // If fire ball has been fired, run this code
-                    if (_fireballShooter.GetHasFiredFireball())
+                    switch (isDelayOver)
                     {
-                        timeUntilAttacking += attackCooldown;
-                        _goblinSFXPlayer.PlaySoundEffect(1, transform.position, 1, Random.Range(0.8f, 1.2f));
+                        case false:
+                            if (timeUntilAttacking <= 0)
+                            {
+                                timeUntilAttacking += attackDelayAmount;
+                            }
+                            break;
+                        case true:
+                            Debug.Log("We've met the conditions to attack the player");
+                            // Instantiate fire ball here
+                            _fireballShooter.ShootFireball();
+
+                            // If fire ball has been fired, run this code
+                            if (_fireballShooter.GetHasFiredFireball())
+                            {
+                                timeUntilAttacking += attackCooldown;
+                                _goblinSFXPlayer.PlaySoundEffect(1, transform.position, 1, Random.Range(0.8f, 1.2f));
+                            }
+                            break;
                     }
                 }
             }
@@ -58,6 +69,7 @@ namespace GJAM3.Enemy
         {
             Attack();
             CooldownAttack();
+            DelayAttack();
         }
 
         #endregion

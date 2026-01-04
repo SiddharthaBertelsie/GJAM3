@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6886712614458026764}
   - component: {fileID: 2144837044818621768}
   - component: {fileID: 7421654894483219606}
-  - component: {fileID: 943675683220341142}
   - component: {fileID: 2880689796984260326}
   m_Layer: 0
   m_Name: Sprite - Enemy
@@ -113,24 +112,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &943675683220341142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915476480983894822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aba5284d6d470e4b9e6b3277a9259f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _soundEffects:
-  - {fileID: 8300000, guid: 54c29c6f0ac3575419e7a3dd624fdadf, type: 3}
-  - {fileID: 8300000, guid: fefaf038fa36d164d9698cc69ca13b29, type: 3}
-  _instantiatedAudioSource: {fileID: 7522520681821660724, guid: a17c70d32581736429f68fe925ac73c4, type: 3}
-  _timeBetweenFootstepSFX: 0
-  _walkingSFXPlayer: {fileID: 8257368932717027952}
 --- !u!114 &2880689796984260326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +202,7 @@ MonoBehaviour:
   distanceToAttackFrom: 0
   attackCooldown: 0
   timeUntilAttacking: 0
+  attackDelayAmount: 0.5
   _playerApproacher: {fileID: 7876271122533987794}
   _enemyHealthManager: {fileID: 8653699577075222430}
   _goblinSFXPlayer: {fileID: 2880689796984260326}

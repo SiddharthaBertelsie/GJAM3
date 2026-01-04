@@ -202,6 +202,7 @@ MonoBehaviour:
   distanceToAttackFrom: 0
   attackCooldown: 0
   timeUntilAttacking: 0
+  attackDelayAmount: 0.5
   _playerApproacher: {fileID: 6652950289555877660}
   _enemyHealthManager: {fileID: 4638597871174212790}
   _snakeSFXPlayer: {fileID: 1778944157554429849}

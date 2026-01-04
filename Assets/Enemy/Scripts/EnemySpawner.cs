@@ -16,6 +16,8 @@ namespace GJAM3.Enemy
 
         [SerializeField] private Transform[] _enemySpawnLocations;
 
+        [SerializeField] private int _amountOfEnemiesToSpawn;
+
         #endregion
 
         #region Methods
@@ -26,24 +28,27 @@ namespace GJAM3.Enemy
             {
                 if (_timeToWait <= 0)
                 {
-                    // >= 5: Snake
-                    // >= 2: Stronger enemy
-                    // <= 1: Strongest enemy
-                    int enemyToSpawn = Random.Range(1, 10);
-                    // 12 locations to possibly spawn at
-                    int locationToSpawn = Random.Range(0, 11);
-
-                    switch (enemyToSpawn)
+                    for (int i = 0; i < _amountOfEnemiesToSpawn; i++)
                     {
-                        case >= 5:
-                            Instantiate(_enemiesToSpawn[0], _enemySpawnLocations[locationToSpawn].position, Quaternion.identity);
-                            _timeToWait += _spawnCooldownTime;
-                            break;
-                        case >= 2:
-                            break;
-                        case <= 1:
-                            break;
+                        // >= 5: Snake
+                        // >= 2: Stronger enemy
+                        // <= 1: Strongest enemy
+                        int enemyToSpawn = Random.Range(1, 10);
+                        // 12 locations to possibly spawn at
+                        int locationToSpawn = Random.Range(0, 11);
+
+                        switch (enemyToSpawn)
+                        {
+                            case <= 7:
+                                Instantiate(_enemiesToSpawn[0], _enemySpawnLocations[locationToSpawn].position, Quaternion.identity);
+                                break;
+                            case <= 10:
+                                Instantiate(_enemiesToSpawn[1], _enemySpawnLocations[locationToSpawn].position, Quaternion.identity);
+                                break;
+                        }
                     }
+
+                    _timeToWait += _spawnCooldownTime;
                 }
             }
         }
@@ -56,7 +61,7 @@ namespace GJAM3.Enemy
             }
         }
 
-        public void CheckToDecreaseSpawnCooldown()
+        public void CheckToIncreaseDifficulty()
         {
             secondsUntillIntervalIncrease++;
 
@@ -65,6 +70,7 @@ namespace GJAM3.Enemy
                 if (_spawnCooldownTime > 0.2f)
                 {
                     _spawnCooldownTime -= 0.1f;
+                    _amountOfEnemiesToSpawn += Random.Range(0, 1);
                 }
 
                 secondsUntillIntervalIncrease = 0;
