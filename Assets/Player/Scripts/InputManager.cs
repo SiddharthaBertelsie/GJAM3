@@ -14,13 +14,13 @@ namespace GJAM3.Player
 
         public Vector2 swordMovementValue;
 
-        public bool basicAttackInputValue;
-
         [Header("Input Actions")]
 
         [SerializeField] private InputActionAsset _playerActionAsset;
 
         private InputAction _basicAttack;
+
+        private InputAction _dashSlasher;
 
         #endregion
 
@@ -63,6 +63,18 @@ namespace GJAM3.Player
             }
         }
 
+        public bool IsDashSlashPerformed()
+        {
+            if (_dashSlasher.WasPerformedThisFrame())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public Vector2 GetPlayerMovementValue()
         {
             return playerMovementValue;
@@ -73,14 +85,10 @@ namespace GJAM3.Player
             return swordMovementValue;
         }
 
-        public bool GetBasicAttackInputValue()
-        {
-            return basicAttackInputValue;
-        }
-
         private void InitializeVariables()
         {
             _basicAttack = _playerActionAsset.FindAction("Basic Attack", false);
+            _dashSlasher = _playerActionAsset.FindAction("Dash Slash", false);
         }
 
         #endregion

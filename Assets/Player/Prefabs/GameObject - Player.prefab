@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovementValue: {x: 0, y: 0}
   swordMovementValue: {x: 0, y: 0}
-  basicAttackInputValue: 0
+  _playerActionAsset: {fileID: -944628639613478452, guid: e98b3b3983ffeb04b85014e0714c9c63, type: 3}
 --- !u!114 &7212557654330590221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +359,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a2119ac4-fcf5-4e97-b5e6-ab2732681912
     m_ActionName: 'Keyboard&Mouse/Basic Attack[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 86ea5bd6-1e89-4bc5-94ea-f11623e9e49c
+    m_ActionName: 'Keyboard&Mouse/Dash Slash[/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Keyboard&Mouse
@@ -585,6 +589,10 @@ PrefabInstance:
       propertyPath: _inputManager
       value: 
       objectReference: {fileID: 5330253480601824567}
+    - target: {fileID: 198720402865373787, guid: cc3f7d3d67feece46bf986b13e1daecb, type: 3}
+      propertyPath: _enemyDetector
+      value: 
+      objectReference: {fileID: 858292788953929030}
     - target: {fileID: 1518629885793291099, guid: cc3f7d3d67feece46bf986b13e1daecb, type: 3}
       propertyPath: m_Size.x
       value: 1.8090378
@@ -668,10 +676,63 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6966845409744923231, guid: cc3f7d3d67feece46bf986b13e1daecb, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 858292788953929030}
+    - targetCorrespondingSourceObject: {fileID: 6966845409744923231, guid: cc3f7d3d67feece46bf986b13e1daecb, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 3999953099545578265}
   m_SourcePrefab: {fileID: 100100000, guid: cc3f7d3d67feece46bf986b13e1daecb, type: 3}
+--- !u!114 &1702311913435072240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3206259366692493034, guid: cc3f7d3d67feece46bf986b13e1daecb, type: 3}
+  m_PrefabInstance: {fileID: 4314791776537743386}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579210117641091653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508634a9b3e7a984499eb1529a27fcd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6507535298478485879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7038651927385547117, guid: cc3f7d3d67feece46bf986b13e1daecb, type: 3}
   m_PrefabInstance: {fileID: 4314791776537743386}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6579210117641091653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6966845409744923231, guid: cc3f7d3d67feece46bf986b13e1daecb, type: 3}
+  m_PrefabInstance: {fileID: 4314791776537743386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &858292788953929030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579210117641091653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f039107a3a9e843bd809270c897217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hasHitEnemy: 0
+  _enemyToAttack: {fileID: 0}
+--- !u!114 &3999953099545578265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579210117641091653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb30c2113942d6948aa315b52560e2ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dashSlashSpeed: 10
+  _rigidBody: {fileID: 251051974309091645}
+  _inputManager: {fileID: 5330253480601824567}
+  _enemyDetector: {fileID: 858292788953929030}
+  _swordMover: {fileID: 1702311913435072240}

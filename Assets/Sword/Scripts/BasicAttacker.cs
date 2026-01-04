@@ -10,13 +10,7 @@ namespace GJAM3.Sword
 
         [Header("Data")]
 
-        [SerializeField] private bool _hasHitEnemy;
-
         [SerializeField] private float _attackDamage;
-
-        [Header("Current Enemy Attacked")]
-
-        [SerializeField] private EnemyHealthManager _currentEnemyAttacked;
 
         [Header("Scripts")]
 
@@ -24,6 +18,8 @@ namespace GJAM3.Sword
         [SerializeField] private InputManager _inputManager;
 
         [SerializeField] private SwordAnimationManager _swordAnimationManager;
+
+        [SerializeField] private EnemyDetector _enemyDetector;
 
         #endregion
 
@@ -39,12 +35,12 @@ namespace GJAM3.Sword
                     Debug.Log("Attack!");
                     _swordAnimationManager.PlayBasicAttackAnimation();
 
-                    if (_hasHitEnemy)
+                    if (_enemyDetector.GetHasHitEnemyValue())
                     {
-                        if (_currentEnemyAttacked != null)
+                        if (_enemyDetector.GetEnemyToAttack() != null)
                         {
                             Debug.Log("We have damaged the enemy!");
-                            _currentEnemyAttacked.DecrementHealth(_attackDamage);
+                            _enemyDetector.GetEnemyToAttack().DecrementHealth(_attackDamage);
                         }
                     }
                 }
@@ -59,26 +55,6 @@ namespace GJAM3.Sword
         void Update()
         {
             PerformAttack();
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.CompareTag("Enemy"))
-            {
-                Debug.Log("An enemy is in range");
-                _hasHitEnemy = true;
-                _currentEnemyAttacked = collision.GetComponent<EnemyHealthManager>();
-            }
-        }
-
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            if (collision.CompareTag("Enemy"))
-            {
-                Debug.Log("The enemy is now out of range");
-                _hasHitEnemy = false;
-                _currentEnemyAttacked = null;
-            }
         }
 
         #endregion

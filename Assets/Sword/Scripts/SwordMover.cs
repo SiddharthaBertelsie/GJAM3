@@ -11,6 +11,9 @@ namespace GJAM3.Sword
 
         [SerializeField] private bool _swordIsInRange;
 
+        // Used by DashSlasher to know which direction we should dash in
+        private Vector2 _currentDirectionRotatingTo;
+
         [Header("Objects")]
 
         [SerializeField] private GameObject _swordSpriteParent;
@@ -56,6 +59,8 @@ namespace GJAM3.Sword
                 Vector3 directionToRotateTo = (screenPosition - transform.position).normalized;
                 directionToRotateTo.z = 0;
 
+                _currentDirectionRotatingTo = directionToRotateTo;
+
                 // This creates an angle based of two planes we input here. We convert it to degrees to get the angle as Atan2 returns radians
                 float angle = Mathf.Atan2(directionToRotateTo.y, directionToRotateTo.x) * Mathf.Rad2Deg;
                 _swordSpriteParent.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -73,6 +78,11 @@ namespace GJAM3.Sword
                     transform.position = directionToMoveTo;
                 }
             }
+        }
+
+        public Vector2 GetCurrentDirectionRotatingTo()
+        {
+            return _currentDirectionRotatingTo;
         }
 
         #endregion

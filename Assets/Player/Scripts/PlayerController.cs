@@ -14,6 +14,8 @@ namespace GJAM3.Player
         [Tooltip("Number determines how fast the player turns when the control stick is mvoed in a direction. This needs to be set very high to work")]
         public float playerRotationSpeed;
 
+        private bool isSpecialMoveActive;
+
         [Header("Components")]
 
         [Tooltip("The rigid body of our player character, used for movement and collisions")]
@@ -32,7 +34,7 @@ namespace GJAM3.Player
         /// </summary>
         private void Movement()
         {
-            if (GameToggler.instance.GameStarted)
+            if (GameToggler.instance.GameStarted && !isSpecialMoveActive)
             {
                 // This code here is responsible for turning the player in the direction of the gamepad stick
                 if (inputManager.playerMovementValue != Vector2.zero) // When the stick is in the dead zone, we'll still keep the same rotation before hand.
@@ -58,6 +60,18 @@ namespace GJAM3.Player
         void FixedUpdate()
         {
             Movement();
+        }
+
+        private void Update()
+        {
+            if (inputManager.IsDashSlashPerformed())
+            {
+                isSpecialMoveActive = true;
+            }
+            else
+            {
+                isSpecialMoveActive= false;
+            }
         }
 
         #endregion
