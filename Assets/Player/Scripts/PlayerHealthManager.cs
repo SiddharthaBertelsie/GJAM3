@@ -12,6 +12,10 @@ namespace GJAM3.Player
 
         [SerializeField] private float _playerMaxHealth;
 
+        [Header("Scripts")]
+
+        [SerializeField] private PlayerSFXPlayer _playerSFXPlayer;
+
         #endregion
 
         #region Debug Variables
@@ -32,6 +36,7 @@ namespace GJAM3.Player
         {
             _playerHealth -= valueToChangeBy;
             Debug.Log("Ouch! I've been dealt [" + valueToChangeBy + "] of damage!");
+            _playerSFXPlayer.PlaySoundEffect(2, transform.position, 1, 1);
             MenuManager.instance.UpdateHUDHealthText(_playerHealth);
         }
 
@@ -52,9 +57,10 @@ namespace GJAM3.Player
 
         private void CheckForDeath()
         {
-            if (_playerHealth <= 0)
+            if (_playerHealth <= 0 && GameToggler.instance.GameStarted)
             {
                 Debug.Log("Oh no! I've died!");
+                _playerSFXPlayer.PlaySoundEffect(3, transform.position, 1, 1);
                 MenuManager.instance.ToggleGameOverMenu(true);
                 GameToggler.instance.ToggleGameStarted(false);
             }

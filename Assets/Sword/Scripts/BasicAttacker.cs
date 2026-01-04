@@ -21,6 +21,8 @@ namespace GJAM3.Sword
 
         [SerializeField] private EnemyDetector _enemyDetector;
 
+        [SerializeField] private PlayerSFXPlayer _playerSFXPlayer;
+
         #endregion
 
         #region Methods
@@ -34,6 +36,7 @@ namespace GJAM3.Sword
                 {
                     Debug.Log("Attack!");
                     _swordAnimationManager.PlayBasicAttackAnimation();
+                    _playerSFXPlayer.PlaySoundEffect(0, transform.position, 1, 1);
 
                     if (_enemyDetector.GetHasHitEnemyValue())
                     {

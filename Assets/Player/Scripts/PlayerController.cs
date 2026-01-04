@@ -28,6 +28,8 @@ namespace GJAM3.Player
 
         [SerializeField] private DashSlasher _dashSlasher;
 
+        [SerializeField] private PlayerSFXPlayer _playerSFXPlayer;
+
         #endregion
 
         #region Methods
@@ -42,14 +44,12 @@ namespace GJAM3.Player
                 // This code here is responsible for turning the player in the direction of the gamepad stick
                 if (inputManager.playerMovementValue != Vector2.zero) // When the stick is in the dead zone, we'll still keep the same rotation before hand.
                 {
+                    _playerSFXPlayer.SetPlayFootstepsSFX(true);
                     rigidBody.linearVelocity = inputManager.playerMovementValue * Time.fixedDeltaTime * playerSpeed;
-
-                    //Quaternion toRotation = Quaternion.LookRotation(inputManager.playerMovementValue, Vector2.zero); // Create a new rotation value, that's set to the current direction of the stick
-
-                    //transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, playerRotationSpeed * Time.fixedDeltaTime); // Set the rotation to a rotation that turns to the prior specified rotation by a predefined speed
                 }
                 else
                 {
+                    _playerSFXPlayer.SetPlayFootstepsSFX(false);
                     rigidBody.linearVelocity = Vector2.zero;
                 }
             }

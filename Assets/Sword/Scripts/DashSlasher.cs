@@ -33,6 +33,8 @@ namespace GJAM3.Sword
 
         [SerializeField] private PlayerController _playerController;
 
+        [SerializeField] private PlayerSFXPlayer _playerSFXPlayer;
+
         #endregion
 
         #region Methods
@@ -59,6 +61,7 @@ namespace GJAM3.Sword
                 {
                     Debug.Log("Performed Dash Slash!");
                     _rigidBody.AddForce(_swordMover.GetCurrentDirectionRotatingTo() * _dashSlashSpeed, ForceMode2D.Impulse);
+                    _playerSFXPlayer.PlaySoundEffect(1, transform.position, 1, Random.Range(0.8f, 1.2f));
                     _dashSlashEnabler.RemoveDashSlash();
                     _currentlyDashSlashing = true;
                 }

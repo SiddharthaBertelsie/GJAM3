@@ -9,6 +9,8 @@ namespace GJAM3.Enemy
 
         private Coroutine _onInAttackDistance;
 
+        [SerializeField] private SnakeSFXPlayer _snakeSFXPlayer;
+
         #endregion
 
         #region Methods
@@ -21,6 +23,7 @@ namespace GJAM3.Enemy
                 {
                     Debug.Log("We've met the conditions to attack the player");
                     timeUntilAttacking += attackCooldown;
+                    _snakeSFXPlayer.PlaySoundEffect(1, transform.position, 1, Random.Range(0.8f, 1.2f));
                     GlobalMethods.instance.DamagePlayer(attackDamage);
                 }
             }
